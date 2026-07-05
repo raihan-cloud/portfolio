@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Raihan Muzaffar Portfolio</title>
+  <meta name="description" content="Technical consulting and development services including network configurations, cloud deployment, and full stack web engineering.">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">RM<span>.</span></a>
+      
+      <button class="mobile-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link active">Services</a></li>
+        <li><a href="skills.html" class="nav-link">Skills</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="experience.html" class="nav-link">Experience</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-primary">
+          <span>Contact Me</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <header class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title">Core <span>Services</span></h1>
+      <p class="page-hero-desc">Discover the range of specialized engineering systems, developer assets, and configuration options that I offer.</p>
+    </div>
+  </header>
+
+  <!-- Accordion Section (Details, Benefits & Tech chips) -->
+  <section>
+    <div class="container">
+      <div class="section-header reveal center">
+        <span class="tag">Expertise Detail</span>
+        <h2>How I Can Help Your Tech Stack</h2>
+        <p>Interactive service details, technologies used, and direct project deliverables.</p>
+      </div>
+
+      <div class="services-container reveal">
+        <!-- Service 1 -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <div class="accordion-title-wrapper">
+              <span class="accordion-number">01.</span>
+              <h3 class="accordion-title">Network Engineering</h3>
+            </div>
+            <span class="accordion-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content">
+              <p class="accordion-desc">
+                Setup and optimization of local networks, dynamic routing setups, site-to-site VPNs, secure firewalls, and continuous traffic monitoring. Experienced in hardware configuration and software-defined networking.
+              </p>
+              
+              <h4 class="accordion-benefits-title">Key Benefits & Deliverables</h4>
+              <ul class="accordion-benefits">
+                <li><i class="fa-solid fa-check"></i> Secure VLAN partitioning to isolate sensitive assets.</li>
+                <li><i class="fa-solid fa-check"></i> Configured access control lists (ACL) and firewall defense walls.</li>
+                <li><i class="fa-solid fa-check"></i> Site-to-site VPN structures linking domestic server assets.</li>
+                <li><i class="fa-solid fa-check"></i> Router configurations using Cisco IOS and MikroTik RouterOS.</li>
+              </ul>
+              
+              <div class="accordion-action-row">
+                <div class="accordion-chips">
+                  <span class="tech-chip">Cisco IOS</span>
+                  <span class="tech-chip">MikroTik RouterOS</span>
+                  <span class="tech-chip">VPN Tunneling</span>
+                  <span class="tech-chip">OSPF/BGP</span>
+                  <span class="tech-chip">Firewalls</span>
+                </div>
+                <a href="contact.html?service=network" class="btn btn-outline-red">Discuss Project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <div class="accordion-title-wrapper">
+              <span class="accordion-number">02.</span>
+              <h3 class="accordion-title">Cloud Engineering</h3>
+            </div>
+            <span class="accordion-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content">
+              <p class="accordion-desc">
+                Deploying high-availability infrastructure on public and private clouds, utilizing modern container systems, and establishing virtualization platforms to isolate workloads and maximize resource allocation.
+              </p>
+              
+              <h4 class="accordion-benefits-title">Key Benefits & Deliverables</h4>
+              <ul class="accordion-benefits">
+                <li><i class="fa-solid fa-check"></i> Virtualized infrastructure deployment with Proxmox VE hypervisors.</li>
+                <li><i class="fa-solid fa-check"></i> Scalable container environments orchestrated with Docker.</li>
+                <li><i class="fa-solid fa-check"></i> Public cloud provisioning on AWS and GCP.</li>
+                <li><i class="fa-solid fa-check"></i> Automated database replication and Firestore setups.</li>
+              </ul>
+              
+              <div class="accordion-action-row">
+                <div class="accordion-chips">
+                  <span class="tech-chip">Proxmox VE</span>
+                  <span class="tech-chip">Docker</span>
+                  <span class="tech-chip">AWS Cloud</span>
+                  <span class="tech-chip">GCP</span>
+                  <span class="tech-chip">Firebase DB</span>
+                </div>
+                <a href="contact.html?service=cloud" class="btn btn-outline-red">Discuss Project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <div class="accordion-title-wrapper">
+              <span class="accordion-number">03.</span>
+              <h3 class="accordion-title">Full Stack Web Development</h3>
+            </div>
+            <span class="accordion-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content">
+              <p class="accordion-desc">
+                End-to-end web engineering, from crafting dynamic, interactive user interfaces to architecting high-performance API endpoints, custom database structures, and secure authentication flows.
+              </p>
+              
+              <h4 class="accordion-benefits-title">Key Benefits & Deliverables</h4>
+              <ul class="accordion-benefits">
+                <li><i class="fa-solid fa-check"></i> Custom API microservices written in Golang and Laravel.</li>
+                <li><i class="fa-solid fa-check"></i> Fast, responsive frontend interfaces with Next.js or CSS/HTML.</li>
+                <li><i class="fa-solid fa-check"></i> Secure authentication handles, JWT tokens, and CORS policies.</li>
+                <li><i class="fa-solid fa-check"></i> Relational database optimizations (PostgreSQL/MySQL).</li>
+              </ul>
+              
+              <div class="accordion-action-row">
+                <div class="accordion-chips">
+                  <span class="tech-chip">Next.js / React</span>
+                  <span class="tech-chip">Laravel PHP</span>
+                  <span class="tech-chip">Golang Core</span>
+                  <span class="tech-chip">PostgreSQL</span>
+                  <span class="tech-chip">Tailwind CSS</span>
+                </div>
+                <a href="contact.html?service=web" class="btn btn-outline-red">Discuss Project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <div class="accordion-title-wrapper">
+              <span class="accordion-number">04.</span>
+              <h3 class="accordion-title">DevOps & Linux Server</h3>
+            </div>
+            <span class="accordion-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content">
+              <p class="accordion-desc">
+                Server provisioning, terminal automation scripting, building CI/CD deployment pipelines, system security hardening, and managing reverse proxy architectures to optimize web traffic delivery.
+              </p>
+              
+              <h4 class="accordion-benefits-title">Key Benefits & Deliverables</h4>
+              <ul class="accordion-benefits">
+                <li><i class="fa-solid fa-check"></i> Ubuntu/Debian server security hardening and updates.</li>
+                <li><i class="fa-solid fa-check"></i> Reverse proxy configuration and load balancing via Nginx.</li>
+                <li><i class="fa-solid fa-check"></i> Continuous integration scripts using GitHub Actions.</li>
+                <li><i class="fa-solid fa-check"></i> Automatic certificate management and domain DNS configurations.</li>
+              </ul>
+              
+              <div class="accordion-action-row">
+                <div class="accordion-chips">
+                  <span class="tech-chip">Ubuntu Server</span>
+                  <span class="tech-chip">Nginx Web Server</span>
+                  <span class="tech-chip">GitHub Actions</span>
+                  <span class="tech-chip">Bash Shell</span>
+                  <span class="tech-chip">SSL/TLS Certs</span>
+                </div>
+                <a href="contact.html?service=devops" class="btn btn-outline-red">Discuss Project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <div class="accordion-title-wrapper">
+              <span class="accordion-number">05.</span>
+              <h3 class="accordion-title">IT Infrastructure</h3>
+            </div>
+            <span class="accordion-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content">
+              <p class="accordion-desc">
+                Architecting core physical and virtual IT systems, ensuring network backup redundancy plans, monitoring physical server clusters, and automating server health check alerts.
+              </p>
+              
+              <h4 class="accordion-benefits-title">Key Benefits & Deliverables</h4>
+              <ul class="accordion-benefits">
+                <li><i class="fa-solid fa-check"></i> Detailed network topology mappings and documentation.</li>
+                <li><i class="fa-solid fa-check"></i> Automated monitoring systems using Zabbix or Prometheus.</li>
+                <li><i class="fa-solid fa-check"></i> Regular automated data backup and recovery pipelines.</li>
+                <li><i class="fa-solid fa-check"></i> Core server room design guidelines and network troubleshooting.</li>
+              </ul>
+              
+              <div class="accordion-action-row">
+                <div class="accordion-chips">
+                  <span class="tech-chip">System Monitoring</span>
+                  <span class="tech-chip">Zabbix / Grafana</span>
+                  <span class="tech-chip">Data Backup</span>
+                  <span class="tech-chip">Server Hardening</span>
+                  <span class="tech-chip">Network Maps</span>
+                </div>
+                <a href="contact.html?service=it-infra" class="btn btn-outline-red">Discuss Project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-bg-alt">
+    <div class="container">
+      <div class="about-card reveal" style="padding: 3.5rem; text-align: center; border-color: var(--border-dark); box-shadow: 6px 6px 0 var(--border-dark);">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1.25rem;">Need a customized service package?</h2>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem auto;">I can tailor configurations, code architecture, and hosting solutions to match your specific constraints. Get in touch with details.</p>
+        <a href="contact.html" class="btn btn-primary">
+          <span>Get Custom Quote</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo">RM<span>.</span></div>
+        <ul class="footer-nav">
+          <li><a href="index.html" class="footer-nav-link">Home</a></li>
+          <li><a href="about.html" class="footer-nav-link">About</a></li>
+          <li><a href="services.html" class="footer-nav-link">Services</a></li>
+          <li><a href="skills.html" class="footer-nav-link">Skills</a></li>
+          <li><a href="projects.html" class="footer-nav-link">Projects</a></li>
+          <li><a href="experience.html" class="footer-nav-link">Experience</a></li>
+          <li><a href="contact.html" class="footer-nav-link">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 Raihan Muzaffar. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="footer-social-btn" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="js/main.js"></script>
+</body>
+</html>

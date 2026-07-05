@@ -1,0 +1,237 @@
+/*
+  =========================================
+  Raihan Muzaffar - Multi-page Portfolio Responsive Styles
+  =========================================
+  Target: /portfolio/css/responsive.css
+*/
+
+@media (max-width: 1024px) {
+  :root {
+    --container-max: 960px;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .projects-grid,
+  .services-list-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .about-grid {
+    gap: 3rem;
+  }
+  
+  .contact-grid {
+    gap: 3rem;
+  }
+  
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 5rem 0;
+  }
+  
+  .section-header h2 {
+    font-size: 2.25rem;
+  }
+  
+  /* Navbar Mobile Layout */
+  .mobile-toggle {
+    display: block;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: var(--bg-primary);
+    border-left: 2px solid var(--border-dark);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3rem;
+    gap: 2rem;
+    z-index: 1050;
+    transition: var(--transition-smooth);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
+  }
+  
+  .nav-menu.open {
+    right: 0;
+  }
+  
+  .nav-cta {
+    display: none;
+  }
+  
+  /* Hero Mobile Layout */
+  .hero {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+  }
+  
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .hero-content {
+    align-items: center;
+  }
+  
+  .hero-preheadline {
+    justify-content: center;
+  }
+  
+  .hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero-actions {
+    justify-content: center;
+  }
+  
+  .hero-reviews {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .hero-visual-wrapper {
+    order: -1;
+  }
+  
+  .hero-circle-bg {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .hero-avatar-card {
+    width: 240px;
+    height: 240px;
+  }
+  
+  /* About Mobile Layout */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  
+  .about-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-sections-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  /* Services Accordion Mobile */
+  .services-list-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .accordion-header {
+    padding: 1.5rem;
+  }
+  
+  .accordion-title {
+    font-size: 1.35rem;
+  }
+  
+  .accordion-content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+  
+  /* Projects Mobile Layout */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Timeline Mobile Layout */
+  .timeline-wrapper::before {
+    left: 20px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    padding-left: 3.5rem;
+    padding-right: 0;
+    text-align: left !important;
+  }
+  
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
+  
+  .timeline-node {
+    left: 10px !important;
+    right: auto !important;
+  }
+  
+  .timeline-item:nth-child(odd) .timeline-card {
+    float: none;
+  }
+  
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Contact Mobile Layout */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  
+  .contact-card-form {
+    padding: 2rem;
+  }
+  
+  .form-group-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.75rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .hero-actions .btn {
+    width: 100%;
+  }
+  
+  .hero-reviews {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .page-hero-title {
+    font-size: 3rem;
+  }
+}

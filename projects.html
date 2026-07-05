@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Raihan Muzaffar Portfolio</title>
+  <meta name="description" content="Technical project database of Raihan Muzaffar. View details on custom networking monitors, cloud server farms, and dynamic web products.">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">RM<span>.</span></a>
+      
+      <button class="mobile-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="skills.html" class="nav-link">Skills</a></li>
+        <li><a href="projects.html" class="nav-link active">Projects</a></li>
+        <li><a href="experience.html" class="nav-link">Experience</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-primary">
+          <span>Contact Me</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <header class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title">Selected <span>Projects</span></h1>
+      <p class="page-hero-desc">Explore the detailed system architectures, microservice structures, and configurations I've designed and deployed.</p>
+    </div>
+  </header>
+
+  <!-- Projects Section (Filter, Cards & Links) -->
+  <section>
+    <div class="container">
+      <!-- Category Filter Bar -->
+      <div class="projects-filter-bar reveal">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="networking">Networking</button>
+        <button class="filter-btn" data-filter="cloud">Cloud</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="iot">IoT</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid">
+        <!-- Project 1: IoT Smart Lock System -->
+        <div class="project-card reveal" data-category="iot">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project-iot.png" alt="IoT Smart Lock Dashboard Interface">
+          </div>
+          <div class="project-card-body">
+            <span class="project-category-tag">IoT / Security</span>
+            <h3 class="project-title">IoT Smart Lock System</h3>
+            <p class="project-desc">A physical security integration utilizing ESP32 microcontrollers, RFID card verification, real-time Firestore synchronization, and a custom web monitoring dashboard.</p>
+            <div class="project-tags">
+              <span class="tech-chip">ESP32</span>
+              <span class="tech-chip">Firebase</span>
+              <span class="tech-chip">Next.js</span>
+              <span class="tech-chip">MQTT</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-outline-red">View Details</a>
+              <a href="#" class="btn btn-secondary" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Siskamling Digital -->
+        <div class="project-card reveal" data-category="web" style="transition-delay: 0.05s;">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project-iot.png" alt="Siskamling Digital Patrol Platform">
+          </div>
+          <div class="project-card-body">
+            <span class="project-category-tag">Web Application</span>
+            <h3 class="project-title">Siskamling Digital</h3>
+            <p class="project-desc">Neighborhood security guard management platform. Facilitates real-time patrol checkpoint scans via QR codes, incident reporting with images, and panic alarm dispatching.</p>
+            <div class="project-tags">
+              <span class="tech-chip">Laravel</span>
+              <span class="tech-chip">MySQL</span>
+              <span class="tech-chip">Leaflet Maps</span>
+              <span class="tech-chip">QR Scanner</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-outline-red">View Details</a>
+              <a href="#" class="btn btn-secondary" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Cloud Infrastructure Lab -->
+        <div class="project-card reveal" data-category="cloud" style="transition-delay: 0.1s;">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project-cloud.png" alt="Cloud Infrastructure Server Diagram">
+          </div>
+          <div class="project-card-body">
+            <span class="project-category-tag">Cloud / Infra</span>
+            <h3 class="project-title">Cloud Infrastructure Lab</h3>
+            <p class="project-desc">Private homelab infrastructure containing isolated virtual machines, Nginx reverse proxies, SSL management, Docker swarm clusters, and a central backup vault.</p>
+            <div class="project-tags">
+              <span class="tech-chip">Proxmox</span>
+              <span class="tech-chip">Docker Swarm</span>
+              <span class="tech-chip">Nginx Proxy</span>
+              <span class="tech-chip">Ubuntu Server</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-outline-red">View Details</a>
+              <a href="#" class="btn btn-secondary" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Network Monitoring Dashboard -->
+        <div class="project-card reveal" data-category="networking">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project-network.png" alt="Network Monitoring Dashboard View">
+          </div>
+          <div class="project-card-body">
+            <span class="project-category-tag">Networking</span>
+            <h3 class="project-title">Network Monitoring Dashboard</h3>
+            <p class="project-desc">Visual system displaying status of local routing appliances, switch node usage, bandwidth allocations, and alert triggers for connectivity failures.</p>
+            <div class="project-tags">
+              <span class="tech-chip">Zabbix API</span>
+              <span class="tech-chip">Python script</span>
+              <span class="tech-chip">React UI</span>
+              <span class="tech-chip">WebSockets</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-outline-red">View Details</a>
+              <a href="#" class="btn btn-secondary" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Company Profile Website -->
+        <div class="project-card reveal" data-category="web" style="transition-delay: 0.05s;">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project-company.png" alt="Company Profile Web Mockup">
+          </div>
+          <div class="project-card-body">
+            <span class="project-category-tag">Web / Frontend</span>
+            <h3 class="project-title">Company Profile Website</h3>
+            <p class="project-desc">A premium responsive portal for corporate representation. Optimized speed, customized content management interface, and modern SEO structure.</p>
+            <div class="project-tags">
+              <span class="tech-chip">Vite / HTML5</span>
+              <span class="tech-chip">CSS Variables</span>
+              <span class="tech-chip">SEO Opt</span>
+              <span class="tech-chip">Framer Motion</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-outline-red">View Details</a>
+              <a href="#" class="btn btn-secondary" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: E-Commerce Web App -->
+        <div class="project-card reveal" data-category="web" style="transition-delay: 0.1s;">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project-ecommerce.png" alt="E-Commerce Interface Preview">
+          </div>
+          <div class="project-card-body">
+            <span class="project-category-tag">Web / Fullstack</span>
+            <h3 class="project-title">E-Commerce Web App</h3>
+            <p class="project-desc">Fullstack web market featuring transactional state handles, shopping carts, Midtrans payment gateway, secure invoice generation, and admin inventory controls.</p>
+            <div class="project-tags">
+              <span class="tech-chip">Laravel</span>
+              <span class="tech-chip">Livewire</span>
+              <span class="tech-chip">MySQL</span>
+              <span class="tech-chip">Midtrans</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-outline-red">View Details</a>
+              <a href="#" class="btn btn-secondary" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 7: Employee Performance Dashboard -->
+        <div class="project-card reveal" data-category="web">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project-company.png" alt="Employee Dashboard Screen Mockup">
+          </div>
+          <div class="project-card-body">
+            <span class="project-category-tag">Web / Fullstack</span>
+            <h3 class="project-title">Employee Performance Dashboard</h3>
+            <p class="project-desc">Corporate internal dashboard tracking tasks, KPI metrics, monthly achievements, and visual chart reporting using CanvasJS.</p>
+            <div class="project-tags">
+              <span class="tech-chip">Laravel 11</span>
+              <span class="tech-chip">Alpine.js</span>
+              <span class="tech-chip">PostgreSQL</span>
+              <span class="tech-chip">Chart.js</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-outline-red">View Details</a>
+              <a href="#" class="btn btn-secondary" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 8: Pharmacy Management System -->
+        <div class="project-card reveal" data-category="web" style="transition-delay: 0.05s;">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project-ecommerce.png" alt="Pharmacy System Screen Mockup">
+          </div>
+          <div class="project-card-body">
+            <span class="project-category-tag">Web / Databases</span>
+            <h3 class="project-title">Pharmacy Management System</h3>
+            <p class="project-desc">Medicine stock trackers, POS cashier logs, secure pharmacist access control, supplier data directory, and monthly finance summaries.</p>
+            <div class="project-tags">
+              <span class="tech-chip">Next.js</span>
+              <span class="tech-chip">Express Backend</span>
+              <span class="tech-chip">MySQL</span>
+              <span class="tech-chip">Tailwind CSS</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-outline-red">View Details</a>
+              <a href="#" class="btn btn-secondary" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo">RM<span>.</span></div>
+        <ul class="footer-nav">
+          <li><a href="index.html" class="footer-nav-link">Home</a></li>
+          <li><a href="about.html" class="footer-nav-link">About</a></li>
+          <li><a href="services.html" class="footer-nav-link">Services</a></li>
+          <li><a href="skills.html" class="footer-nav-link">Skills</a></li>
+          <li><a href="projects.html" class="footer-nav-link">Projects</a></li>
+          <li><a href="experience.html" class="footer-nav-link">Experience</a></li>
+          <li><a href="contact.html" class="footer-nav-link">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 Raihan Muzaffar. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="footer-social-btn" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="js/main.js"></script>
+</body>
+</html>
