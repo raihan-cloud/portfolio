@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Admin Portfolio</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+  <!-- Sidebar Placeholder -->
+  <div id="sidebarPlaceholder"></div>
+
+  <!-- Main Content -->
+  <div class="main-content" id="mainContent">
+
+    <!-- Navbar Placeholder -->
+    <div id="navbarPlaceholder"></div>
+
+    <!-- Page Content -->
+    <div class="page-content">
+
+      <!-- Page Header -->
+      <div class="page-header" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+        <div>
+          <h1 class="page-title">Dashboard</h1>
+          <p class="page-subtitle">Selamat datang kembali, Raihan 👋</p>
+        </div>
+        <a href="projects.html" class="btn btn-primary">
+          <i class="bi bi-plus-lg"></i> Tambah Proyek
+        </a>
+      </div>
+
+      <!-- ====== STAT CARDS ====== -->
+      <div class="stats-grid mb-24">
+        <!-- Total Proyek -->
+        <div class="stat-card primary">
+          <div class="stat-icon primary">
+            <i class="bi bi-folder-fill"></i>
+          </div>
+          <div class="stat-value" id="statProjects" data-counter="0">0</div>
+          <div class="stat-label">Total Proyek</div>
+          <div class="stat-trend up" id="statProjectsTrend">
+            <i class="bi bi-arrow-repeat spin"></i> Memuat...
+          </div>
+        </div>
+
+        <!-- Total Tech Stack -->
+        <div class="stat-card success">
+          <div class="stat-icon success">
+            <i class="bi bi-lightning-fill"></i>
+          </div>
+          <div class="stat-value" id="statTech" data-counter="0">0</div>
+          <div class="stat-label">Tech Stack</div>
+          <div class="stat-trend up" id="statTechTrend">
+            <i class="bi bi-arrow-repeat spin"></i> Memuat...
+          </div>
+        </div>
+
+        <!-- Total Pesan -->
+        <div class="stat-card warning">
+          <div class="stat-icon warning">
+            <i class="bi bi-chat-dots-fill"></i>
+          </div>
+          <div class="stat-value" id="statMessages" data-counter="0">0</div>
+          <div class="stat-label">Pesan Masuk</div>
+          <div class="stat-trend up" id="statMsgTrend">
+            <i class="bi bi-arrow-repeat spin"></i> Memuat...
+          </div>
+        </div>
+      </div>
+
+      <!-- ====== TABLES ====== -->
+      <div class="grid-2">
+
+        <!-- Proyek Terbaru -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Proyek Terbaru</div>
+              <div class="card-subtitle">5 proyek terakhir ditambahkan</div>
+            </div>
+            <a href="projects.html" class="btn btn-sm btn-secondary">Lihat Semua</a>
+          </div>
+          <div style="overflow-x:auto">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Proyek</th>
+                  <th>Kategori</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="dashProjectsBody">
+                <tr><td colspan="3" style="text-align:center;padding:24px;color:var(--text-muted)"><i class="bi bi-arrow-repeat spin"></i> Memuat...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Pesan Terbaru -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Pesan Masuk Terbaru</div>
+              <div class="card-subtitle">5 pesan terakhir diterima</div>
+            </div>
+            <a href="messages.html" class="btn btn-sm btn-secondary">Lihat Semua</a>
+          </div>
+          <div style="overflow-x:auto">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Pengirim</th>
+                  <th>Subjek</th>
+                  <th>Waktu</th>
+                </tr>
+              </thead>
+              <tbody id="dashMessagesBody">
+                <tr><td colspan="3" style="text-align:center;padding:24px;color:var(--text-muted)"><i class="bi bi-arrow-repeat spin"></i> Memuat...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+      <!-- end grid-2 -->
+
+    </div>
+    <!-- end page-content -->
+
+    <!-- Footer Placeholder -->
+    <div id="footerPlaceholder"></div>
+
+  </div>
+  <!-- end main-content -->
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/loader.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var bc = document.getElementById('breadcrumbCurrent');
+      if (bc) bc.textContent = 'Dashboard';
+      loadDashboardData();
+    });
+
+    async function loadDashboardData() {
+      try {
+        var results = await Promise.all([
+          ProjectService.getAll().catch(function() { return []; }),
+          MessageService.getAll().catch(function() { return []; })
+        ]);
+
+        var projects = Array.isArray(results[0]) ? results[0] : (results[0].data || results[0].projects || []);
+        var messages = Array.isArray(results[1]) ? results[1] : (results[1].data || results[1].messages || []);
+
+        // Stats
+        var techSet = new Set();
+        projects.forEach(function(p) {
+          var tech = Array.isArray(p.techStack) ? p.techStack : (p.tech || '').split(',');
+          tech.forEach(function(t) { if (t.trim()) techSet.add(t.trim()); });
+        });
+        var unread = messages.filter(function(m) { return m.read === false || m.isRead === false; }).length;
+
+        animateCounter(document.getElementById('statProjects'), projects.length);
+        animateCounter(document.getElementById('statTech'), techSet.size);
+        animateCounter(document.getElementById('statMessages'), messages.length);
+
+        document.getElementById('statProjectsTrend').innerHTML = '<i class="bi bi-folder-check"></i> ' + projects.length + ' proyek aktif';
+        document.getElementById('statTechTrend').innerHTML = '<i class="bi bi-lightning-fill"></i> ' + techSet.size + ' teknologi';
+        document.getElementById('statMsgTrend').innerHTML = unread > 0
+          ? '<i class="bi bi-envelope-fill"></i> ' + unread + ' belum dibaca'
+          : '<i class="bi bi-check-circle"></i> Semua terbaca';
+
+        // Recent projects (5 latest)
+        var recent = projects.slice(-5).reverse();
+        var projBody = document.getElementById('dashProjectsBody');
+        if (recent.length === 0) {
+          projBody.innerHTML = '<tr><td colspan="3" style="text-align:center;padding:24px;color:var(--text-muted)">Belum ada proyek.</td></tr>';
+        } else {
+          projBody.innerHTML = recent.map(function(p) {
+            var status = (p.status || 'draft').toLowerCase();
+            var badge = status === 'published'
+              ? '<span class="badge badge-success">Published</span>'
+              : '<span class="badge badge-warning">Draft</span>';
+            var tech = Array.isArray(p.techStack) ? p.techStack.slice(0, 2).join(', ') : (p.tech || '');
+            return '<tr><td><div style="display:flex;align-items:center;gap:12px">' +
+              '<div class="thumb" style="background:#ecfdf5;display:flex;align-items:center;justify-content:center;color:var(--primary)"><i class="bi bi-folder"></i></div>' +
+              '<div><div style="font-weight:600;font-size:14px">' + esc(p.title) + '</div>' +
+              '<div style="font-size:12px;color:var(--text-muted)">' + esc(tech) + '</div></div></div></td>' +
+              '<td><span class="badge badge-primary">' + esc(p.category || '-') + '</span></td>' +
+              '<td>' + badge + '</td></tr>';
+          }).join('');
+        }
+
+        // Recent messages (5 latest)
+        var recentMsgs = messages.slice(-5).reverse();
+        var msgBody = document.getElementById('dashMessagesBody');
+        if (recentMsgs.length === 0) {
+          msgBody.innerHTML = '<tr><td colspan="3" style="text-align:center;padding:24px;color:var(--text-muted)">Belum ada pesan.</td></tr>';
+        } else {
+          msgBody.innerHTML = recentMsgs.map(function(m) {
+            var name = m.name || m.from || 'Anonim';
+            var initials = name.split(' ').map(function(w) { return w[0]; }).join('').slice(0, 2).toUpperCase();
+            var time = m.createdAt ? relTime(m.createdAt) : (m.date || '');
+            return '<tr><td><div style="display:flex;align-items:center;gap:10px">' +
+              '<div class="avatar-placeholder avatar-sm" style="border-radius:50%;font-size:12px;font-weight:700;background:var(--primary-ultra-light);color:var(--primary)">' + initials + '</div>' +
+              '<div><div style="font-weight:600;font-size:14px">' + esc(name) + '</div>' +
+              '<div style="font-size:12px;color:var(--text-muted)">' + esc(m.email || '') + '</div></div></div></td>' +
+              '<td style="font-size:13px">' + esc((m.subject || '').slice(0, 30)) + '</td>' +
+              '<td style="font-size:12px;color:var(--text-muted);white-space:nowrap">' + esc(time) + '</td></tr>';
+          }).join('');
+        }
+
+      } catch (err) {
+        Notify.error('Gagal memuat data dashboard.');
+      }
+    }
+
+    function relTime(d) {
+      var diff = Math.floor((Date.now() - new Date(d).getTime()) / 1000);
+      if (diff < 60) return 'Baru saja';
+      if (diff < 3600) return Math.floor(diff / 60) + ' menit lalu';
+      if (diff < 86400) return Math.floor(diff / 3600) + ' jam lalu';
+      if (diff < 604800) return Math.floor(diff / 86400) + ' hari lalu';
+      return Math.floor(diff / 604800) + ' minggu lalu';
+    }
+
+    function esc(str) {
+      if (!str) return '';
+      var d = document.createElement('div');
+      d.textContent = str;
+      return d.innerHTML;
+    }
+  </script>
+</body>
+</html>

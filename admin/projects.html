@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Admin Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+  <div id="sidebarPlaceholder"></div>
+
+  <div class="main-content" id="mainContent">
+    <div id="navbarPlaceholder"></div>
+
+    <div class="page-content">
+
+      <div class="page-header page-header-row">
+        <div>
+          <h1>Projects</h1>
+          <p>Kelola proyek portfolio Anda</p>
+        </div>
+        <button class="btn btn-primary" onclick="openProjectModal()">
+          <i class="bi bi-plus"></i> Tambah Proyek
+        </button>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs" id="projectTabs">
+        <button class="tab-btn active" data-tab="all">Semua (<span id="countAll">0</span>)</button>
+        <button class="tab-btn" data-tab="published">Published (<span id="countPublished">0</span>)</button>
+        <button class="tab-btn" data-tab="draft">Draft (<span id="countDraft">0</span>)</button>
+      </div>
+
+      <!-- Table -->
+      <div class="card">
+        <div class="table-wrap">
+          <table class="tbl">
+            <thead>
+              <tr>
+                <th>Proyek</th>
+                <th>Kategori</th>
+                <th>Status</th>
+                <th>Tanggal</th>
+                <th style="width:100px">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="project-table-body">
+              <!-- Rendered dynamically by api.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="footerPlaceholder"></div>
+  </div>
+
+  <!-- Modal: Add/Edit Project -->
+  <div class="modal-overlay" id="projectModal">
+    <div class="modal-box wide">
+      <div class="modal-head">
+        <h3 id="modal-title">Tambah Proyek Baru</h3>
+        <button class="modal-close" onclick="Modal.close('projectModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="project-form">
+          <div class="form-row">
+            <div class="form-group" style="grid-column:span 2">
+              <label class="form-label">Judul Proyek</label>
+              <input type="text" class="form-input" name="title" placeholder="Nama proyek" required>
+            </div>
+            <div class="form-group" style="grid-column:span 2">
+              <label class="form-label">Deskripsi</label>
+              <textarea class="form-input" name="description" rows="3" placeholder="Deskripsi singkat proyek..."></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Kategori</label>
+              <select class="form-input" name="category">
+                <option value="">Pilih kategori</option>
+                <option value="Web App">Web App</option>
+                <option value="Website">Website</option>
+                <option value="Backend">Backend</option>
+                <option value="IoT">IoT</option>
+                <option value="DevOps">DevOps</option>
+                <option value="Networking">Networking</option>
+                <option value="Mobile">Mobile</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Status</label>
+              <select class="form-input" name="status">
+                <option value="draft">Draft</option>
+                <option value="published">Published</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Tech Stack</label>
+              <input type="text" class="form-input" name="tech" placeholder="React, Node.js, ...">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Link GitHub</label>
+              <input type="url" class="form-input" name="github" placeholder="https://github.com/...">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Link Live Demo</label>
+              <input type="url" class="form-input" name="demo" placeholder="https://...">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Cover Image URL</label>
+              <input type="url" class="form-input" name="image" placeholder="https://...">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-secondary" onclick="Modal.close('projectModal')">Batal</button>
+        <button class="btn btn-primary" onclick="document.getElementById('project-form').requestSubmit()">Simpan</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/loader.js"></script>
+  <script src="assets/js/api.js"></script>
+</body>
+</html>

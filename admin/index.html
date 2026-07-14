@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Admin Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+  <div id="sidebarPlaceholder"></div>
+
+  <div class="main-content" id="mainContent">
+    <div id="navbarPlaceholder"></div>
+
+    <div class="page-content">
+
+      <div class="page-header">
+        <h1>Dashboard</h1>
+        <p>Selamat datang kembali, Raihan.</p>
+      </div>
+
+      <!-- Metrics -->
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-label">Total Projects</div>
+          <div class="metric-value" data-counter="12">0</div>
+          <div class="metric-delta up"><i class="bi bi-arrow-up-short"></i> +2 bulan ini</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Tech Stack</div>
+          <div class="metric-value" data-counter="8">0</div>
+          <div class="metric-delta up"><i class="bi bi-arrow-up-short"></i> +1 baru</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Messages</div>
+          <div class="metric-value" data-counter="15">0</div>
+          <div class="metric-delta up"><i class="bi bi-arrow-up-short"></i> 3 belum dibaca</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Page Views</div>
+          <div class="metric-value" data-counter="1247">0</div>
+          <div class="metric-delta up"><i class="bi bi-arrow-up-short"></i> +18% vs bulan lalu</div>
+        </div>
+      </div>
+
+      <!-- Two-column: Activity + Right stack -->
+      <div class="grid-2">
+
+        <!-- Activity Log -->
+        <div class="card">
+          <div class="card-header">
+            <div><h3>Activity Log</h3></div>
+          </div>
+          <div class="card-body">
+            <ul class="activity-list">
+              <li class="activity-item">
+                <span class="activity-dot green"></span>
+                <div>
+                  <div class="activity-text">Added new project: <strong>E-Commerce Platform</strong></div>
+                  <div class="activity-time">2 jam yang lalu</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <span class="activity-dot blue"></span>
+                <div>
+                  <div class="activity-text">Replied to message from <strong>Ahmad Dahlan</strong></div>
+                  <div class="activity-time">5 jam yang lalu</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <span class="activity-dot amber"></span>
+                <div>
+                  <div class="activity-text">Updated skill proficiency: <strong>React.js → 80%</strong></div>
+                  <div class="activity-time">1 hari yang lalu</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <span class="activity-dot green"></span>
+                <div>
+                  <div class="activity-text">Published project: <strong>Company Profile</strong></div>
+                  <div class="activity-time">2 hari yang lalu</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <span class="activity-dot"></span>
+                <div>
+                  <div class="activity-text">New message from <strong>Siti Khadijah</strong></div>
+                  <div class="activity-time">2 hari yang lalu</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <span class="activity-dot"></span>
+                <div>
+                  <div class="activity-text">Changed profile photo</div>
+                  <div class="activity-time">3 hari yang lalu</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right column stack -->
+        <div>
+          <!-- Quick Draft -->
+          <div class="card mb-20">
+            <div class="card-header">
+              <div><h3>Quick Draft</h3></div>
+            </div>
+            <div class="card-body">
+              <form id="quickDraftForm" onsubmit="saveDraft(event)">
+                <div class="form-group">
+                  <input type="text" class="form-input" placeholder="Judul proyek baru...">
+                </div>
+                <div class="form-group">
+                  <textarea class="form-input" rows="3" placeholder="Catatan singkat..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-sm">Save Draft</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Analytics Chart -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3>Visitors Overview</h3>
+                <p>Statistik pengunjung 7 bulan terakhir</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="chart-bars">
+                <div class="chart-col">
+                  <div class="chart-value">320</div>
+                  <div class="chart-bar" style="height:38%"></div>
+                  <div class="chart-label">Jan</div>
+                </div>
+                <div class="chart-col">
+                  <div class="chart-value">480</div>
+                  <div class="chart-bar" style="height:56%"></div>
+                  <div class="chart-label">Feb</div>
+                </div>
+                <div class="chart-col">
+                  <div class="chart-value">280</div>
+                  <div class="chart-bar" style="height:33%"></div>
+                  <div class="chart-label">Mar</div>
+                </div>
+                <div class="chart-col">
+                  <div class="chart-value">650</div>
+                  <div class="chart-bar" style="height:76%"></div>
+                  <div class="chart-label">Apr</div>
+                </div>
+                <div class="chart-col">
+                  <div class="chart-value">520</div>
+                  <div class="chart-bar" style="height:61%"></div>
+                  <div class="chart-label">May</div>
+                </div>
+                <div class="chart-col">
+                  <div class="chart-value">850</div>
+                  <div class="chart-bar" style="height:100%"></div>
+                  <div class="chart-label">Jun</div>
+                </div>
+                <div class="chart-col">
+                  <div class="chart-value">620</div>
+                  <div class="chart-bar" style="height:73%"></div>
+                  <div class="chart-label">Jul</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="footerPlaceholder"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/loader.js"></script>
+  <script>
+    function saveDraft(e) {
+      e.preventDefault();
+      Toast.success('Draft Saved', 'Ide proyek berhasil disimpan.');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "portfolio-vercel-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Serverless API for portfolio admin",
+  "main": "index.js",
+  "scripts": {
+    "check:api": "node --check api/projects.js && node --check api/messages.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.8",
+    "dotenv": "^16.6.1"
+  }
+}

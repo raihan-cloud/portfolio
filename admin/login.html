@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Admin — Raihan Portfolio</title>
+    <meta name="description" content="Masuk ke dasbor admin portfolio.">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS Proyek Admin -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+</head>
+<body class="login-page">
+
+    <div class="login-wrapper">
+
+        <!-- ============================================
+             SISI KIRI — Branding & Ilustrasi (58%)
+             ============================================ -->
+        <div class="login-left">
+
+            <!-- Logo Portfolio -->
+            <a href="../../index.html" class="login-logo">
+                <div class="login-logo-icon">
+                    <i class="bi bi-terminal"></i>
+                </div>
+                <div class="login-logo-text">
+                    Raihan
+                    <span>Portfolio</span>
+                </div>
+            </a>
+
+            <!-- Ornamen Blob Hijau Pastel Bertingkat -->
+            <div class="login-blobs">
+                <div class="login-blob login-blob--back"></div>
+                <div class="login-blob login-blob--mid"></div>
+                <div class="login-blob login-blob--front"></div>
+            </div>
+
+            <!-- Ilustrasi Developer — ganti <img src="..."> dengan gambar Anda -->
+            <div class="login-illustration">
+                <!--
+                    GANTI placeholder di bawah dengan ilustrasi Anda:
+                    <img src="assets/images/developer-illustration.png" alt="Ilustrasi Web Developer">
+                -->
+                <svg class="login-illustration-placeholder" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Meja -->
+                    <rect x="60" y="290" width="280" height="8" rx="4" fill="#0d4429" opacity="0.15"/>
+                    <!-- Kaki meja -->
+                    <rect x="100" y="298" width="6" height="50" rx="3" fill="#0d4429" opacity="0.1"/>
+                    <rect x="294" y="298" width="6" height="50" rx="3" fill="#0d4429" opacity="0.1"/>
+                    <!-- Monitor -->
+                    <rect x="100" y="120" width="200" height="140" rx="12" fill="#0d4429" opacity="0.12"/>
+                    <rect x="110" y="130" width="180" height="110" rx="6" fill="#ffffff"/>
+                    <!-- Kode di layar monitor -->
+                    <rect x="125" y="148" width="60" height="6" rx="3" fill="#82c8a0"/>
+                    <rect x="125" y="162" width="90" height="6" rx="3" fill="#b3dcc4"/>
+                    <rect x="140" y="176" width="70" height="6" rx="3" fill="#1a8c5b"/>
+                    <rect x="140" y="190" width="50" height="6" rx="3" fill="#82c8a0"/>
+                    <rect x="125" y="204" width="80" height="6" rx="3" fill="#b3dcc4"/>
+                    <rect x="125" y="218" width="40" height="6" rx="3" fill="#1a8c5b"/>
+                    <!-- Simbol kurung kurawal -->
+                    <text x="248" y="195" font-family="monospace" font-size="48" fill="#0d4429" opacity="0.1" font-weight="700">{}</text>
+                    <!-- Stand monitor -->
+                    <rect x="180" y="260" width="40" height="16" rx="3" fill="#0d4429" opacity="0.1"/>
+                    <rect x="170" y="276" width="60" height="6" rx="3" fill="#0d4429" opacity="0.12"/>
+                    <!-- Keyboard -->
+                    <rect x="130" y="280" width="140" height="8" rx="4" fill="#0d4429" opacity="0.08"/>
+                    <!-- Tanaman kecil di kiri -->
+                    <circle cx="80" cy="270" r="14" fill="#82c8a0" opacity="0.5"/>
+                    <circle cx="72" cy="262" r="10" fill="#b3dcc4" opacity="0.5"/>
+                    <rect x="78" y="276" width="4" height="14" rx="2" fill="#0d4429" opacity="0.12"/>
+                    <!-- Cangkir kopi di kanan -->
+                    <rect x="310" y="268" width="20" height="22" rx="4" fill="#0d4429" opacity="0.1"/>
+                    <path d="M330 274 C336 274, 336 284, 330 284" stroke="#0d4429" stroke-width="2.5" opacity="0.08" fill="none"/>
+                    <!-- Uap kopi -->
+                    <path d="M316 262 Q318 256 320 262" stroke="#0d4429" stroke-width="1.5" opacity="0.08" fill="none"/>
+                    <path d="M322 260 Q324 254 326 260" stroke="#0d4429" stroke-width="1.5" opacity="0.08" fill="none"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- ============================================
+             SISI KANAN — Form Login Admin (42%)
+             ============================================ -->
+        <div class="login-right">
+
+            <!-- Wave Border Organik Vertikal -->
+            <div class="login-wave">
+                <svg viewBox="0 0 80 1000" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="
+                        M80 0
+                        C80 0, 30 60, 45 140
+                        C60 220, 75 280, 50 370
+                        C25 460, 15 520, 40 610
+                        C65 700, 70 760, 45 850
+                        C20 940, 35 975, 80 1000
+                        L80 1000 L80 0 Z
+                    " fill="#0d4429"/>
+                </svg>
+            </div>
+
+            <!-- Form Container -->
+            <div class="login-form-box">
+                <h1 class="login-heading">Login Admin</h1>
+                <p class="login-subheading">Masuk ke dasbor portfolio Anda</p>
+
+                <!-- Error Alert -->
+                <div class="login-error" id="errorBox" role="alert">
+                    <i class="bi bi-exclamation-circle"></i>
+                    <span id="errorText">Username atau password salah.</span>
+                </div>
+
+                <form id="loginForm" novalidate>
+                    <!-- Username -->
+                    <div class="login-field">
+                        <label for="loginUsername">Username</label>
+                        <div class="login-input-wrap">
+                            <i class="bi bi-person input-icon"></i>
+                            <input
+                                type="text"
+                                id="loginUsername"
+                                placeholder="Masukkan username"
+                                required
+                                autocomplete="username"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="login-field">
+                        <label for="loginPassword">Password</label>
+                        <div class="login-input-wrap">
+                            <i class="bi bi-lock input-icon"></i>
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                placeholder="Masukkan password"
+                                required
+                                autocomplete="current-password"
+                            >
+                            <button type="button" class="login-pass-toggle" id="passToggle" aria-label="Tampilkan password">
+                                <i class="bi bi-eye" id="passEyeIcon"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tombol Submit -->
+                    <button type="submit" class="login-submit" id="loginBtn">
+                        <span id="loginBtnText">Enter Console</span>
+                        <div class="login-spinner" id="loginSpinner"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script src="assets/js/variables.js" onerror="void 0"></script>
+
+    <script>
+        // Toggle tampilkan/sembunyikan password
+        document.getElementById('passToggle').addEventListener('click', function () {
+            const input = document.getElementById('loginPassword');
+            const icon  = document.getElementById('passEyeIcon');
+
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.className = 'bi bi-eye-slash';
+            } else {
+                input.type = 'password';
+                icon.className = 'bi bi-eye';
+            }
+        });
+
+        // Submit form login
+        document.getElementById('loginForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById('loginUsername').value.trim();
+            const pw       = document.getElementById('loginPassword').value;
+            const btn      = document.getElementById('loginBtn');
+            const btnText  = document.getElementById('loginBtnText');
+            const spinner  = document.getElementById('loginSpinner');
+            const errBox   = document.getElementById('errorBox');
+
+            errBox.style.display = 'none';
+
+            if (!username || !pw) {
+                showError('Tolong isi semua bidang.');
+                return;
+            }
+
+            // Loading state
+            btn.disabled = true;
+            btnText.textContent = 'MEMPROSES…';
+            spinner.style.display = 'inline-block';
+
+            // Simulasi network delay — ganti dengan auth API Anda
+            await new Promise(function (r) { setTimeout(r, 1200); });
+
+            if (username === 'admin' && pw === 'portfolio123') {
+                window.location.href = 'index.html';
+            } else {
+                showError('Username atau password Anda salah.');
+                btn.disabled = false;
+                btnText.textContent = 'Enter Console';
+                spinner.style.display = 'none';
+            }
+        });
+
+        function showError(msg) {
+            var errBox  = document.getElementById('errorBox');
+            var errText = document.getElementById('errorText');
+            errText.textContent = msg;
+            errBox.style.display = 'flex';
+        }
+    </script>
+</body>
+</html>

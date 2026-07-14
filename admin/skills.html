@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills — Admin Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+  <div id="sidebarPlaceholder"></div>
+
+  <div class="main-content" id="mainContent">
+    <div id="navbarPlaceholder"></div>
+
+    <div class="page-content">
+
+      <div class="page-header page-header-row">
+        <div>
+          <h1>Skills & Tech Stack</h1>
+          <p>Kelola keahlian yang tampil di portfolio</p>
+        </div>
+        <button class="btn btn-primary" onclick="openSkillModal()">
+          <i class="bi bi-plus"></i> Tambah Skill
+        </button>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs" id="skillTabs">
+        <button class="tab-btn active" data-tab="all">All (12)</button>
+        <button class="tab-btn" data-tab="frontend">Frontend (4)</button>
+        <button class="tab-btn" data-tab="backend">Backend (4)</button>
+        <button class="tab-btn" data-tab="tools">Tools (4)</button>
+      </div>
+
+      <!-- Skills Grid -->
+      <div class="skills-grid" id="skillsGrid">
+
+        <div class="skill-card" data-cat="frontend">
+          <div class="skill-card-top">
+            <div>
+              <div class="skill-name">HTML & CSS</div>
+              <div class="skill-category">Frontend</div>
+            </div>
+            <div class="skill-actions">
+              <button class="btn btn-sm btn-secondary btn-icon" onclick="openSkillModal('edit')" title="Edit"><i class="bi bi-pencil"></i></button>
+              <button class="btn btn-sm btn-danger btn-icon" onclick="deleteSkill()" title="Hapus"><i class="bi bi-trash"></i></button>
+            </div>
+          </div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:95%"></div></div>
+          <div class="skill-pct">95%</div>
+        </div>
+
+        <div class="skill-card" data-cat="frontend">
+          <div class="skill-card-top">
+            <div>
+              <div class="skill-name">JavaScript</div>
+              <div class="skill-category">Frontend</div>
+            </div>
+            <div class="skill-actions">
+              <button class="btn btn-sm btn-secondary btn-icon" onclick="openSkillModal('edit')" title="Edit"><i class="bi bi-pencil"></i></button>
+              <button class="btn btn-sm btn-danger btn-icon" onclick="deleteSkill()" title="Hapus"><i class="bi bi-trash"></i></button>
+            </div>
+          </div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
+          <div class="skill-pct">85%</div>
+        </div>
+
+        <div class="skill-card" data-cat="frontend">
+          <div class="skill-card-top">
+            <div>
+              <div class="skill-name">React.js</div>
+              <div class="skill-category">Frontend</div>
+            </div>
+            <div class="skill-actions">
+              <button class="btn btn-sm btn-secondary btn-icon" onclick="openSkillModal('edit')" title="Edit"><i class="bi bi-pencil"></i></button>
+              <button class="btn btn-sm btn-danger btn-icon" onclick="deleteSkill()" title="Hapus"><i class="bi bi-trash"></i></button>
+            </div>
+          </div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+          <div class="skill-pct">80%</div>
+        </div>
+
+        <div class="skill-card" data-cat="frontend">
+          <div class="skill-card-top">
+            <div>
+              <div class="skill-name">Tailwind CSS</div>
+              <div class="skill-category">Frontend</div>
+            </div>
+            <div class="skill-actions">
+              <button class="btn btn-sm btn-secondary btn-icon" onclick="openSkillModal('edit')" title="Edit"><i class="bi bi-pencil"></i></button>
+              <button class="btn btn-sm btn-danger btn-icon" onclick="deleteSkill()" title="Hapus"><i class="bi bi-trash"></i></button>
+            </div>
+          </div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:75%"></div></div>
+          <div class="skill-pct">75%</div>
+        </div>
+
+        <div class="skill-card" data-cat="backend">
+          <div class="skill-card-top">
+            <div>
+              <div class="skill-name">Node.js</div>
+              <div class="skill-category">Backend</div>
+            </div>
+            <div class="skill-actions">
+              <button class="btn btn-sm btn-secondary btn-icon" onclick="openSkillModal('edit')" title="Edit"><i class="bi bi-pencil"></i></button>
+              <button class="btn btn-sm btn-danger btn-icon" onclick="deleteSkill()" title="Hapus"><i class="bi bi-trash"></i></button>
+            </div>
+          </div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+          <div class="skill-pct">80%</div>
+        </div>
+
+        <div class="skill-card" data-cat="backend">
+          <div class="skill-card-top">
+            <div>
+              <div class="skill-name">Express.js</div>
+              <div class="skill-category">Backend</div>
+            </div>
+            <div class="skill-actions">
+              <button class="btn btn-sm btn-secondary btn-icon" onclick="openSkillModal('edit')" title="Edit"><i class="bi bi-pencil"></i></button>
+              <button class="btn btn-sm btn-danger btn-icon" onclick="deleteSkill()" title="Hapus"><i class="bi bi-trash"></i></button>
+            </div>
+          </div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:75%"></div></div>
+          <div class="skill-pct">75%</div>
+        </div>
+
+        <div class="skill-card" data-cat="backend">
+          <div class="skill-card-top">
+            <div>
+              <div class="skill-name">Python</div>
+              <div class="skill-category">Backend</div>
+            </div>
+            <div class="skill-actions">
+              <button class="btn btn-sm btn-secondary btn-icon" onclick="openSkillModal('edit')" title="Edit"><i class="bi bi-pencil"></i></button>
+              <button class="btn btn-sm btn-danger btn-icon" onclick="deleteSkill()" title="Hapus"><i class="bi bi-trash"></i></button>
+            </div>
+          </div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:70%"></div></div>
+          <div class="skill-pct">70%</div>
+        </div>
+
+        <div class="skill-card" data-cat="backend">
+          <div class="skill-card-top">
+            <div>
+              <div class="skill-name">PostgreSQL</div>
+              <div class="skill-category">Backend</div>
+            </div>
+            <div class="skill-actions">
+              <button class="btn btn-sm btn-secondary btn-icon" onclick="openSkillModal('edit')" title="Edit"><i class="bi bi-pencil"></i></button>
+              <button class="btn btn-sm btn-danger btn-icon" onclick="deleteSkill()" title="Hapus"><i class="bi bi-trash"></i></button>
+            </div>
+          </div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:65%"></div></div>
+          <div class="skill-pct">65%</div>
+        </div>
+
+        <div class="skill-card" data-cat="tools">
+          <div class="skill-card-top">
+            <div>
+              <div class="skill-name">Git & GitHub</div>
+              <div class="skill-category">Tools</div>
+            </div>
+            <div class="skill-actions">
+              <button class="btn btn-sm btn-secondary btn-icon" onclick="openSkillModal('edit')" title="Edit"><i class="bi bi-pencil"></i></button>
+              <button class="btn btn-sm btn-danger btn-icon" onclick="deleteSkill()" title="Hapus"><i class="bi bi-trash"></i></button>
+            </div>
+          </div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:90%"></div></div>
+          <div class="skill-pct">90%</div>
+        </div>
+
+        <div class="skill-card" data-cat="tools">
+          <div class="skill-card-top">
+            <div>
+              <div class="skill-name">Docker</div>
+              <div class="skill-category">Tools</div>
+            </div>
+            <div class="skill-actions">
+              <button class="btn btn-sm btn-secondary btn-icon" onclick="openSkillModal('edit')" title="Edit"><i class="bi bi-pencil"></i></button>
+              <button class="btn btn-sm btn-danger btn-icon" onclick="deleteSkill()" title="Hapus"><i class="bi bi-trash"></i></button>
+            </div>
+          </div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:60%"></div></div>
+          <div class="skill-pct">60%</div>
+        </div>
+
+        <div class="skill-card" data-cat="tools">
+          <div class="skill-card-top">
+            <div>
+              <div class="skill-name">AWS</div>
+              <div class="skill-category">Tools</div>
+            </div>
+            <div class="skill-actions">
+              <button class="btn btn-sm btn-secondary btn-icon" onclick="openSkillModal('edit')" title="Edit"><i class="bi bi-pencil"></i></button>
+              <button class="btn btn-sm btn-danger btn-icon" onclick="deleteSkill()" title="Hapus"><i class="bi bi-trash"></i></button>
+            </div>
+          </div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:55%"></div></div>
+          <div class="skill-pct">55%</div>
+        </div>
+
+        <div class="skill-card" data-cat="tools">
+          <div class="skill-card-top">
+            <div>
+              <div class="skill-name">Figma</div>
+              <div class="skill-category">Tools</div>
+            </div>
+            <div class="skill-actions">
+              <button class="btn btn-sm btn-secondary btn-icon" onclick="openSkillModal('edit')" title="Edit"><i class="bi bi-pencil"></i></button>
+              <button class="btn btn-sm btn-danger btn-icon" onclick="deleteSkill()" title="Hapus"><i class="bi bi-trash"></i></button>
+            </div>
+          </div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:50%"></div></div>
+          <div class="skill-pct">50%</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="footerPlaceholder"></div>
+  </div>
+
+  <!-- Modal: Add/Edit Skill -->
+  <div class="modal-overlay" id="skillModal">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h3 id="skillModalTitle">Tambah Skill</h3>
+        <button class="modal-close" onclick="Modal.close('skillModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="skillForm" onsubmit="saveSkill(event)">
+          <div class="form-group">
+            <label class="form-label">Nama Skill</label>
+            <input type="text" class="form-input" placeholder="e.g. React.js" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Kategori</label>
+              <select class="form-input">
+                <option>Frontend</option>
+                <option>Backend</option>
+                <option>Tools</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Proficiency (%)</label>
+              <input type="number" class="form-input" min="0" max="100" placeholder="80">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-secondary" onclick="Modal.close('skillModal')">Batal</button>
+        <button class="btn btn-primary" onclick="document.getElementById('skillForm').requestSubmit()">Simpan</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/loader.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var bc = document.getElementById('breadcrumbCurrent');
+      if (bc) bc.textContent = 'Skills';
+
+      initTabs('#skillTabs', function(tab) {
+        document.querySelectorAll('#skillsGrid .skill-card').forEach(function(card) {
+          if (tab === 'all') { card.style.display = ''; return; }
+          card.style.display = card.dataset.cat === tab ? '' : 'none';
+        });
+      });
+    });
+
+    function openSkillModal(mode) {
+      var title = document.getElementById('skillModalTitle');
+      document.getElementById('skillForm').reset();
+      title.textContent = mode === 'edit' ? 'Edit Skill' : 'Tambah Skill';
+      Modal.open('skillModal');
+    }
+
+    function saveSkill(e) {
+      e.preventDefault();
+      Modal.close('skillModal');
+      Toast.success('Berhasil', 'Skill berhasil disimpan.');
+    }
+
+    function deleteSkill() {
+      confirmAction('Hapus Skill?', 'Skill ini akan dihapus dari portfolio.').then(function(ok) {
+        if (ok) Toast.success('Dihapus', 'Skill berhasil dihapus.');
+      });
+    }
+  </script>
+</body>
+</html>

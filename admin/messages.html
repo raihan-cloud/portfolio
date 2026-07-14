@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages — Admin Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+  <div id="sidebarPlaceholder"></div>
+
+  <div class="main-content" id="mainContent">
+    <div id="navbarPlaceholder"></div>
+
+    <div class="page-content">
+
+      <div class="page-header">
+        <h1>Messages</h1>
+        <p>Pesan dari pengunjung portfolio</p>
+      </div>
+
+      <!-- Inbox Split Layout -->
+      <div class="inbox">
+
+        <!-- Left: Message List -->
+        <div class="inbox-list">
+          <div class="inbox-list-header">Inbox &mdash; <span id="msgCount">0</span> pesan</div>
+          <div id="message-list-container">
+            <!-- Rendered dynamically by api.js -->
+          </div>
+        </div>
+
+        <!-- Right: Reading Pane -->
+        <div class="inbox-reader" id="inboxReader">
+          <div class="reader-back" onclick="closeReader()">
+            <i class="bi bi-arrow-left"></i> Kembali
+          </div>
+          <div id="reading-pane-content">
+            <div class="reader-header">
+              <div class="reader-subject" style="color:var(--text-muted)">Pilih pesan untuk dibaca</div>
+            </div>
+            <div class="reader-body" style="color:var(--text-muted);font-style:italic">Klik pesan di sebelah kiri untuk membaca isi pesan.</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="footerPlaceholder"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/loader.js"></script>
+  <script src="assets/js/api.js"></script>
+</body>
+</html>

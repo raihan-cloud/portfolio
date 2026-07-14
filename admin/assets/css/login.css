@@ -1,0 +1,460 @@
+/* ================================================
+   LOGIN PAGE — Split Screen Layout
+   Tema: Personal Portfolio Admin
+   Terhubung dengan: variables.css
+   ================================================ */
+
+/* ---- Reset khusus halaman login ---- */
+.login-page {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    font-family: var(--font);
+    background: #ffffff;
+}
+
+/* ================================================
+   SPLIT SCREEN CONTAINER
+   ================================================ */
+.login-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* ================================================
+   SISI KIRI — Ilustrasi & Branding (58%)
+   ================================================ */
+.login-left {
+    position: relative;
+    width: 58%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Logo Portfolio — pojok kiri atas */
+.login-logo {
+    position: absolute;
+    top: 32px;
+    left: 36px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 10;
+    text-decoration: none;
+}
+
+.login-logo-icon {
+    width: 42px;
+    height: 42px;
+    background: #0d4429;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.login-logo-text {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0d4429;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+.login-logo-text span {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    color: #64748b;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* ---- Ornamen Blob Hijau Pastel Bertingkat ---- */
+.login-blobs {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.login-blob {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50% 50% 4% 4% / 60% 60% 8% 8%;
+}
+
+.login-blob--back {
+    bottom: -10%;
+    width: 88%;
+    height: 70%;
+    background: #dcf0e3;
+}
+
+.login-blob--mid {
+    bottom: -6%;
+    width: 72%;
+    height: 60%;
+    background: #b3dcc4;
+}
+
+.login-blob--front {
+    bottom: -2%;
+    width: 58%;
+    height: 52%;
+    background: #82c8a0;
+}
+
+/* ---- Ilustrasi Placeholder ---- */
+.login-illustration {
+    position: relative;
+    z-index: 5;
+    width: 60%;
+    max-width: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-illustration img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.login-illustration-placeholder {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #0d4429;
+    opacity: 0.45;
+}
+
+.login-illustration-placeholder i {
+    font-size: 72px;
+}
+
+.login-illustration-placeholder span {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* ================================================
+   SISI KANAN — Form Login (42%)
+   ================================================ */
+.login-right {
+    position: relative;
+    width: 42%;
+    background: #0d4429;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---- Wave Border Organik Vertikal ---- */
+.login-wave {
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: 80px;
+    height: 100%;
+    z-index: 2;
+    overflow: visible;
+}
+
+.login-wave svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* ---- Form Container ---- */
+.login-form-box {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 340px;
+    padding: 0 28px;
+}
+
+/* Judul LOGIN ADMIN */
+.login-heading {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+    line-height: 1.1;
+}
+
+.login-subheading {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 36px;
+    font-weight: 400;
+}
+
+/* ---- Error Box ---- */
+.login-error {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #fca5a5;
+    margin-bottom: 24px;
+    display: none;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ---- Input Fields ---- */
+.login-field {
+    margin-bottom: 22px;
+}
+
+.login-field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+}
+
+.login-input-wrap {
+    position: relative;
+}
+
+.login-input-wrap .input-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.login-input-wrap input {
+    width: 100%;
+    padding: 14px 50px 14px 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1.5px solid rgba(255, 255, 255, 0.12);
+    border-radius: 9999px;
+    font-size: 14px;
+    color: #ffffff;
+    outline: none;
+    transition: all 0.25s ease;
+    font-family: var(--font);
+}
+
+.login-input-wrap input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.login-input-wrap input:focus {
+    background: rgba(255, 255, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.06);
+}
+
+/* Toggle visibility password */
+.login-pass-toggle {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.45);
+    cursor: pointer;
+    font-size: 16px;
+    background: none;
+    border: none;
+    padding: 4px;
+    z-index: 2;
+    transition: color 0.2s;
+    line-height: 1;
+}
+
+.login-pass-toggle:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ---- Tombol Login ---- */
+.login-submit {
+    width: 100%;
+    padding: 15px;
+    border-radius: 9999px;
+    background: #1a8c5b;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 32px;
+    font-family: var(--font);
+}
+
+.login-submit:hover {
+    background: #22a76d;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(26, 140, 91, 0.35);
+}
+
+.login-submit:active {
+    transform: translateY(0);
+}
+
+.login-submit:disabled {
+    background: #145e3e;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Spinner loading */
+.login-spinner {
+    width: 18px;
+    height: 18px;
+    border: 2.5px solid rgba(255, 255, 255, 0.35);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: login-spin 0.7s linear infinite;
+    display: none;
+}
+
+@keyframes login-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ================================================
+   RESPONSIF
+   ================================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .login-left  { width: 50%; }
+    .login-right { width: 50%; }
+
+    .login-illustration { width: 70%; }
+
+    .login-heading { font-size: 28px; }
+}
+
+/* Mobile — layout vertikal */
+@media (max-width: 768px) {
+    .login-wrapper {
+        flex-direction: column;
+    }
+
+    .login-left {
+        width: 100%;
+        height: 32vh;
+        min-height: 180px;
+    }
+
+    .login-right {
+        width: 100%;
+        flex: 1;
+    }
+
+    /* Sembunyikan wave vertikal, ganti wave horizontal */
+    .login-wave { display: none; }
+
+    .login-right::before {
+        content: '';
+        position: absolute;
+        top: -28px;
+        left: 0;
+        width: 100%;
+        height: 36px;
+        background: #0d4429;
+        border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        z-index: 1;
+    }
+
+    .login-logo {
+        top: 18px;
+        left: 20px;
+    }
+
+    .login-logo-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 17px;
+    }
+
+    .login-logo-text {
+        font-size: 16px;
+    }
+
+    .login-illustration {
+        width: 38%;
+        max-width: 180px;
+    }
+
+    .login-blob--back  { width: 78%; height: 78%; }
+    .login-blob--mid   { width: 64%; height: 68%; }
+    .login-blob--front { width: 52%; height: 58%; }
+
+    .login-form-box {
+        max-width: 380px;
+        padding: 0 24px;
+    }
+
+    .login-heading {
+        font-size: 26px;
+        margin-bottom: 6px;
+    }
+
+    .login-subheading {
+        margin-bottom: 28px;
+    }
+}
+
+/* Ponsel kecil */
+@media (max-width: 480px) {
+    .login-left {
+        height: 26vh;
+        min-height: 150px;
+    }
+
+    .login-heading {
+        font-size: 22px;
+        letter-spacing: 2px;
+    }
+
+    .login-form-box {
+        padding: 0 18px;
+    }
+
+    .login-illustration {
+        width: 34%;
+        max-width: 150px;
+    }
+
+    .login-field { margin-bottom: 18px; }
+    .login-submit { margin-top: 24px; }
+}
